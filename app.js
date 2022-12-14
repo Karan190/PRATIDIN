@@ -10,7 +10,8 @@ const session=require('express-session');
 const flash=require('connect-flash');
 const MongoStore= require('connect-mongo');
 
-const dbUrl=process.env.DB_URL || "mongodb://localhost:27017/blogDB";
+const dbUrl= process.env.DB_URL;
+console.log(dbUrl)
 const blogRoute=require('./routes/blog.js');
 const userRoute=require('./routes/user.js')
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
